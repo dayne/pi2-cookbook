@@ -2,4 +2,4 @@ source 'https://supermarket.chef.io'
 
 metadata
 
-cookbook 'staticip', '~> 0.1.5'
+cookbook 'd-base', '~> 0.1.6', git:'https://github.com/dayne/d-base.git'
