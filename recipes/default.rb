@@ -5,10 +5,27 @@
 # Copyright (c) 2015 The Authors, All Rights Reserved.
 #
 
-include_recipe 'd-base::default'
+# us keyboard
+replace_or_add 'us keyboard' do
+  path '/etc/default/keyboard'
+  pattern 'XKBLAYOUT'
+  line 'XKBLAYOUT="US"'
+end
 
-packages = [ 'fswebcam', 'qiv' ]
+replace_or_add 'xkboptions = nocaps' do
+  path '/etc/default/keyboard'
+  pattern 'XKBOPTIONS'
+  line 'XKBOPTIONS=ctrl:nocaps'
+end
 
-packages.each do |p|
-  package p
+node.default['packages'].merge!( {
+  'dnsutils'  => 'install',
+  'mpg123'    => 'install',
+  'mplayer'   => 'install',
+  'omxplayer'   => 'install',
+  'ruby-dev'  => 'install'
+})
+
+%w{ colored }.each do |gem|
+  gem_package gem
 end
