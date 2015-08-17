@@ -2,4 +2,7 @@ source 'https://supermarket.chef.io'
 
 metadata
 
-cookbook 'd-base', '~> 0.1.6', git:'https://github.com/dayne/d-base.git'
+cookbook 'apt', '~> 2.7.0'
+cookbook 'chef-sugar', '~> 3.1.0'
+cookbook 'line', '~> 0.6.1'
+cookbook 'packages', '~> 0.4.0'

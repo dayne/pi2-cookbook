@@ -6,4 +6,7 @@ description 'Installs/Configures pi2-cookbook'
 long_description 'Installs/Configures pi2-cookbook'
 version '0.1.1'
 
-depends 'd-base', '~> 0.1.6'
+depends 'line', '~> 0.6.1'
+depends 'apt', '~> 2.7.0'
+depends 'chef-sugar', '~> 3.1.0'
+depends 'packages', '~> 0.4.0'
